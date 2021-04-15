@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "766378392857",
+    "project_id": "chatapp-93d1c",
+    "storage_bucket": "chatapp-93d1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766378392857:android:b8b24255b3b6e81a331988",
+        "android_client_info": {
+          "package_name": "com.markgardie.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766378392857-cek9ace0afv81it5fq26gr1tesio1lq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.markgardie.chatapp",
+            "certificate_hash": "1196ec6de8ed8aebe995cc0200d9eed8351e2c34"
+          }
+        },
+        {
+          "client_id": "766378392857-58r8v9v6a14gq4l1e5o8d8ffge6am8v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB_v5fZksNj2fPknR1e_tIlA_cvvTCnIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766378392857-58r8v9v6a14gq4l1e5o8d8ffge6am8v7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
