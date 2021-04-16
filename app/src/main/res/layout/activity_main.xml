@@ -12,8 +12,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="25dp"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_send_button"
         app:fabSize="mini" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/btnSend"
+        app:boxBackgroundColor="#FFFFFF"
+        app:errorEnabled="true">
+
+        <EditText
+            android:id="@+id/message_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/message_hint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 </RelativeLayout>
