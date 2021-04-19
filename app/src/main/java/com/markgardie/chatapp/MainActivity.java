@@ -15,6 +15,7 @@ import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -55,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 EditText text_field = findViewById(R.id.message_field);
                 if(text_field.getText().toString() == "")
                     return;
-                FirebaseDatabase.getInstance().getReference().push().setValue(
+                FirebaseDatabase.getInstance(FirebaseApp.getInstance("https://chatapp-93d1c-default-rtdb.firebaseio.com/")).getReference().push().setValue(
                         new Message(
-                                FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                                FirebaseAuth.getInstance(FirebaseApp.getInstance("https://chatapp-93d1c-default-rtdb.firebaseio.com/")).getCurrentUser().getEmail(),
                                 text_field.getText().toString()
                                 )
                 );
@@ -66,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(FirebaseAuth.getInstance().getCurrentUser() == null)
-            startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_CODE);
+        if(FirebaseAuth.getInstance(FirebaseApp.getInstance("https://chatapp-93d1c-default-rtdb.firebaseio.com/")).getCurrentUser() == null)
+            startActivityForResult(AuthUI.getInstance(FirebaseApp.getInstance("https://chatapp-93d1c-default-rtdb.firebaseio.com/")).createSignInIntentBuilder().build(), SIGN_IN_CODE);
         else
             Snackbar.make(activity_main, "Вы авторизованы", Snackbar.LENGTH_LONG).show();
             displayAllMessaged();
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayAllMessaged() {
         ListView lisOfMessages = findViewById(R.id.list_messages);
-        adapter = new FirebaseListAdapter<Message>(this, Message.class, R.layout.list_item, FirebaseDatabase.getInstance().getReference()) {
+        adapter = new FirebaseListAdapter<Message>(this, Message.class, R.layout.list_item, FirebaseDatabase.getInstance(FirebaseApp.getInstance("https://chatapp-93d1c-default-rtdb.firebaseio.com/")).getReference()) {
             @Override
             protected void populateView(View v, Message model, int position) {
                 TextView mess_user, mess_time, mess_text;
