@@ -1,8 +1,7 @@
-# Compiled class file
-*.class
+# Created by https://www.gitignore.io/api/java,gradle
 
-# Log file
-*.log
+### Java ###
+*.class
 
 # BlueJ files
 *.ctxt
@@ -13,109 +12,26 @@
 # Package Files #
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# Gradle
-# ------
+
+### Gradle ###
 .gradle
-/build
-/*/build
-/*/*/build
-/*/*/*/build
-/*/*/*/*/build
-/*/docs/src/samples/**/build
-/*/docs/src/snippets/**/build
-/*/internal-android-performance-testing/build-android-libs
-test-splits/
+/build/
 
-# IDEA
-# ----
-!/.idea
-/.idea/*
-!/.idea/codeStyles
-!/.idea/inspectionProfiles
-!/.idea/icon.png
-!/.idea/icon_dark.png
-*/**/.idea
-*/**/.shelf
-.shelf
-/*.iml
-/*/*.iml
-/*/*/*.iml
-/*/*/*/*.iml
-/*/*/*/*/*.iml
-/out
-/*/out
-/*/*/out
-/*/*/*/out
-/*/*/*/*/out
-/.teamcity/target
-/gradle.ipr
-/gradle.iws
+# Ignore Gradle GUI config
+gradle-app.setting
 
-# Eclipse
-# -------
-*.classpath
-*.project
-*.settings
-/bin
-/subprojects/*/bin
-atlassian-ide-plugin.xml
-.metadata/
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
 
-# NetBeans
-# --------
-.nb-gradle
-.nb-gradle-properties
-
-# Vim
-# ---
-*.sw[nop]
-
-# Emacs
-# -----
-*~
-\#*\#
-.\#*
-
-# Textmate
-# --------
-.textmate
-
-# Sublime Text
-# ------------
-*.sublime-*
-
-# jEnv
-# ----
-.java-version
-
-# macOS
-# ----
-.DS_Store
-
-# HPROF
-# -----
-*.hprof
-
-# Work dirs
-# ---------
-/incoming-distributions
-/intTestHomeDir
-
-# Logs
-# ----
-/*.log
-
-# Thread dumps for troubleshooting
-*.threaddump
-
-# oh-my-zsh gradle plugin
+# Cache of project
 .gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+# End of https://www.gitignore.io/api/java,gradle
