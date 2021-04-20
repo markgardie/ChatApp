@@ -43,3 +43,6 @@ gradle-app.setting
 .gradle/6.5/fileHashes/resourceHashesCache.bin
 .gradle/6.5/javaCompile/javaCompile.lock
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
+*.bin
+*.bin
+*.lock
