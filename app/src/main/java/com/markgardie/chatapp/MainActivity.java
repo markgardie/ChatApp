@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,12 +22,18 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import android.text.format.DateFormat;
 
+import hani.momanii.supernova_emoji_library.Actions.EmojIconActions;
+import hani.momanii.supernova_emoji_library.Helper.EmojiconEditText;
+import hani.momanii.supernova_emoji_library.emoji.Emojicon;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_CODE = 1;
     private RelativeLayout activity_main;
     private FirebaseListAdapter<Message> adapter;
-    private FloatingActionButton sendButton;
+    private EmojiconEditText emojiconEditText;
+    private ImageView emojiButton, sendButton;
+    private EmojIconActions emojIconActions;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -49,21 +56,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         activity_main = findViewById(R.id.activity_main);
-        sendButton = findViewById(R.id.btnSend);
+
+        sendButton = findViewById(R.id.send_button);
+        emojiButton = findViewById(R.id.emoji_button);
+        emojiconEditText = findViewById(R.id.text_field);
+        emojIconActions = new EmojIconActions(getApplicationContext(), activity_main, emojiconEditText, emojiButton);
+        emojIconActions.ShowEmojIcon();
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText text_field = findViewById(R.id.message_field);
-                if(text_field.getText().toString() == "")
-                    return;
-                FirebaseDatabase.getInstance().getReference().push().setValue(
-                        new Message(
-                                FirebaseAuth.getInstance().getCurrentUser().getEmail(),
-                                text_field.getText().toString()
-                                )
-                );
+                FirebaseDatabase.getInstance().getReference().push().setValue(new Message (
+                        FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                        emojiconEditText.getText().toString()
+                ));
 
-                text_field.setText("");
+                emojiconEditText.setText("");
             }
         });
 
