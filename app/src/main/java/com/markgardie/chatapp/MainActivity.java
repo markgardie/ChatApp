@@ -90,9 +90,12 @@ public class MainActivity extends AppCompatActivity {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-              
-
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                try {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                } catch (ActivityNotFoundException e) {
+                    // display error state to the user
+                }
             }
         });
 
@@ -104,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
             displayAllMessaged();
 
     }
-
 
 
     private void displayAllMessaged() {
