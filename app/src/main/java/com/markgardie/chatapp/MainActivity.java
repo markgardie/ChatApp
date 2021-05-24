@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout activity_main;
     private FirebaseListAdapter<Message> adapter;
     private EmojiconEditText emojiconEditText;
-    private ImageView emojiButton, sendButton, cameraButton;
+    private ImageView emojiButton, sendButton, cameraButton, photo;
     private EmojIconActions emojIconActions;
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            //imageView.setImageBitmap(imageBitmap);
+            photo = findViewById(R.id.photo);
+            photo.setImageBitmap(imageBitmap);
         }
     }
 
