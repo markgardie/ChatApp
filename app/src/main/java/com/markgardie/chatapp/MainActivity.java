@@ -3,8 +3,11 @@ package com.markgardie.chatapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout activity_main;
     private FirebaseListAdapter<Message> adapter;
     private EmojiconEditText emojiconEditText;
-    private ImageView emojiButton, sendButton;
+    private ImageView emojiButton, sendButton, cameraButton;
     private EmojIconActions emojIconActions;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -48,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }
+
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            //imageView.setImageBitmap(imageBitmap);
+        }
     }
 
     @Override
@@ -59,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         sendButton = findViewById(R.id.send_button);
         emojiButton = findViewById(R.id.emoji_button);
+        cameraButton = findViewById(R.id.camera_button);
         emojiconEditText = findViewById(R.id.text_field);
         emojIconActions = new EmojIconActions(getApplicationContext(), activity_main, emojiconEditText, emojiButton);
         emojIconActions.ShowEmojIcon();
@@ -75,6 +87,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+              
+
+            }
+        });
+
+
         if(FirebaseAuth.getInstance().getCurrentUser() == null)
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_CODE);
         else
@@ -82,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
             displayAllMessaged();
 
     }
+
+
 
     private void displayAllMessaged() {
         ListView lisOfMessages = findViewById(R.id.list_messages);
