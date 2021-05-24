@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Марк\AppData\Local\Temp\baseline_send_24.xml" />
+                                                <entry key="imagePath" value="C:\Users\Марк\AppData\Local\Temp\baseline_camera_alt_24.xml" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="file:/$PROJECT_DIR$/../../Android/SDK/icons/material/materialicons/send/baseline_send_24.xml" />
+                                                <entry key="url" value="file:/$PROJECT_DIR$/../../Android/SDK/icons/material/materialicons/camera_alt/baseline_camera_alt_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -68,7 +68,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_send_button" />
+                                      <entry key="outputName" value="ic_camera_button" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="000000" />
                                     </map>
@@ -323,7 +323,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../Android/SDK/icons/material/materialicons/send/baseline_send_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../Android/SDK/icons/material/materialicons/camera_alt/baseline_camera_alt_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -333,8 +333,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_baseline_send_24" />
+                            <entry key="outputName" value="ic_baseline_camera_alt_24" />
                             <entry key="sourceFile" value="E:\Programming\KPI_Projects\ChatApp" />
                           </map>
                         </option>
